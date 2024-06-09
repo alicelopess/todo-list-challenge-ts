@@ -5,12 +5,12 @@ export const Header = styled.header`
   justify-content: center;
   align-items: center;
 
-  height: 200px;
+  height: 12.5rem;
 
   background: ${(props) => props.theme['gray-700']};
 
   img {
-    width: 126px;
-    height: 48px;
+    width: 7.875rem;
+    height: 3rem;
   }
 `
