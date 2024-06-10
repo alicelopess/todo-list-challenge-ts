@@ -7,6 +7,7 @@ export const HomeContainer = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 37px;
 
   form {
     width: 100%;
@@ -129,4 +130,82 @@ export const Tasks = styled.main`
   font-size: 1rem;
   font-weight: 400;
   line-height: 140%;
+`
+
+export const Task = styled.div`
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid ${(props) => props.theme['gray-400']};
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  background: ${(props) => props.theme['gray-500']};
+
+  button {
+    border: none;
+    border-radius: 0.25rem;
+    color: ${(props) => props.theme['gray-300']};
+    width: 24px;
+    height: 24px;
+    background: transparent;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    &:hover {
+      background: ${(props) => props.theme['gray-400']};
+      color: ${(props) => props.theme.danger};
+    }
+  }
+`
+
+export const Label = styled.label`
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: ${(props) => props.theme['gray-100']};
+  line-height: normal;
+
+  cursor: pointer;
+`
+
+export const CheckboxDisplay = styled.div``
+export const CheckboxIcon = styled.span`
+  display: none;
+`
+
+export const CheckboxInput = styled.input.attrs({ type: 'checkbox' })`
+  display: none;
+
+  & + ${CheckboxDisplay} {
+    width: 17.45px;
+    height: 17.45px;
+    border-radius: 50%;
+    border: 2px solid ${(props) => props.theme.blue};
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:checked + ${CheckboxDisplay} {
+    border: none;
+    background-color: ${(props) => props.theme['purple-dark']};
+
+    ${CheckboxIcon} {
+      display: block;
+      color: ${(props) => props.theme['gray-100']};
+    }
+  }
 `
