@@ -117,30 +117,3 @@ export const CheckboxDisplay = styled.div<{ state: CheckboxProps['state'] }>`
     }
   }}
 `
-
-// export const CheckboxInput = styled.input.attrs({
-//   type: 'checkbox',
-// })<{ state: LabelProps['state'] }>`
-//   display: none;
-
-//   & + ${CheckboxDisplay} {
-//     width: 17.45px;
-//     height: 17.45px;
-//     border-radius: 50%;
-//     border: 2px solid ${(props) => props.theme.blue};
-
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//   }
-
-//   &:checked + ${CheckboxDisplay} {
-//     border: none;
-//     background-color: ${(props) => props.theme['purple-dark']};
-
-//     ${CheckboxIcon} {
-//       display: block;
-//       color: ${(props) => props.theme['gray-100']};
-//     }
-//   }
-// `

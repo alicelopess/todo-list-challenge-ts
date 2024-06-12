@@ -6,7 +6,6 @@ export function DefaultLayout() {
   return (
     <>
       <Header>
-        {/* <h1>Default Layout</h1> */}
         <img src={applicationLogo} alt="" />
       </Header>
       <Outlet />

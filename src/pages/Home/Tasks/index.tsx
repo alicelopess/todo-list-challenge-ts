@@ -1,8 +1,6 @@
 import { Check, Trash } from '@phosphor-icons/react'
 import {
   CheckboxDisplay,
-  // CheckboxIcon,
-  // CheckboxInput,
   CheckboxText,
   Label,
   Task,
