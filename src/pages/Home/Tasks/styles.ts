@@ -31,6 +31,10 @@ export const TasksWrapper = styled.main<{ state: TasksWrapperProps['state'] }>`
       `
     }
   }}
+
+  @media (max-width: 412px) {
+    text-align: center;
+  }
 `
 
 export const Task = styled.div`

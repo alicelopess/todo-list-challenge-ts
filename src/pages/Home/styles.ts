@@ -15,6 +15,10 @@ export const HomeContainer = styled.main`
     align-items: center;
     justify-content: center;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 2rem;
+  }
 `
 
 export const FormContainer = styled.div`
@@ -25,6 +29,11 @@ export const FormContainer = styled.div`
   gap: 0.5rem;
 
   transform: translateY(-50%);
+
+  @media (max-width: 412px) {
+    flex-direction: column;
+    transform: translateY(-25%);
+  }
 `
 export const BaseInput = styled.input`
   flex: 1;
@@ -45,6 +54,10 @@ export const BaseInput = styled.input`
 
   &::placeholder {
     color: ${(props) => props.theme['gray-300']};
+  }
+
+  @media (max-width: 412px) {
+    width: 100%;
   }
 `
 export const BaseButton = styled.button`
@@ -68,12 +81,21 @@ export const BaseButton = styled.button`
   &:hover {
     background: ${(props) => props.theme.blue};
   }
+
+  @media (max-width: 412px) {
+    width: 100%;
+  }
 `
 export const TasksContainer = styled.div`
   width: 46rem;
   display: grid;
   grid-template-rows: 1fr auto;
   gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    /* max-width: 768px; */
+  }
 `
 export const TasksInfo = styled.header`
   display: flex;
