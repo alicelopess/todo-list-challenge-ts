@@ -84,6 +84,7 @@ export const CheckboxText = styled.span<{ state: CheckboxProps['state'] }>`
     if (state === 'checked') {
       return css`
         text-decoration: line-through;
+        color: ${(props) => props.theme['gray-300']};
       `
     }
   }}
