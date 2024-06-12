@@ -47,7 +47,19 @@ export function Home() {
             Tarefas Criadas <TaskCounter>{tasks.length}</TaskCounter>
           </CreatedTasks>
           <FinishedTasks>
-            Concluídas <TaskCounter>0</TaskCounter>
+            Concluídas{' '}
+            {tasks.length > 0 ? (
+              <TaskCounter>
+                {tasks.reduce(
+                  (counter, task) =>
+                    task.isChecked ? (counter += 1) : counter,
+                  0,
+                )}{' '}
+                de {tasks.length}
+              </TaskCounter>
+            ) : (
+              <TaskCounter>{tasks.length}</TaskCounter>
+            )}
           </FinishedTasks>
         </TasksInfo>
         <Tasks />

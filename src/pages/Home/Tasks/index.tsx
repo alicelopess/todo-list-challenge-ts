@@ -11,7 +11,7 @@ import { useContext } from 'react'
 import { TaskContext } from '../../../contexts/TaskContext'
 
 export function Tasks() {
-  const { tasks, deleteTask, handleCheck } = useContext(TaskContext)
+  const { tasks, deleteTask, markTaskAsFinished } = useContext(TaskContext)
 
   return tasks.length === 0 ? (
     <TasksWrapper state="empty">
@@ -28,26 +28,8 @@ export function Tasks() {
         console.log(item)
         console.log(item.isChecked)
         return (
-          <Task onClick={() => handleCheck(item)} key={item.id}>
-            {/* <Label state={item.isChecked ? 'checked' : 'default'}>
-                    <CheckboxInput state={item.isChecked ? 'checked' : 'default'} />
-                    <CheckboxDisplay>
-                      <CheckboxIcon>
-                        <Check size={10} />
-                      </CheckboxIcon>
-                    </CheckboxDisplay>
-                    <span>{item.title}</span>
-                  </Label>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      deleteTask(item)
-                    }}
-                  >
-                    <Trash size={16} />
-                  </button> */}
-
-            <Label onClick={() => handleCheck(item)} key={item.id}>
+          <Task onClick={() => markTaskAsFinished(item)} key={item.id}>
+            <Label onClick={() => markTaskAsFinished(item)} key={item.id}>
               <CheckboxDisplay state={item.isChecked ? 'checked' : 'default'}>
                 <Check size={10} />
               </CheckboxDisplay>
