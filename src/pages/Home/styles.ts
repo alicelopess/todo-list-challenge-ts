@@ -101,6 +101,12 @@ export const TasksInfo = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 320px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 `
 export const TaskCounter = styled.span`
   background: ${(props) => props.theme['gray-400']};
