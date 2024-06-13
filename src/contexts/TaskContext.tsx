@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from 'react'
+import { ReactNode, createContext, useEffect, useState } from 'react'
 
 // Types
 interface TaskContextProviderProps {
@@ -25,9 +25,26 @@ interface TaskContextType {
 
 export const TaskContext = createContext({} as TaskContextType)
 export function TaskContextProvider({ children }: TaskContextProviderProps) {
-  const [tasks, setTasks] = useState<Task[]>([])
+  const initialState = () => {
+    const storedStateAsJSON = localStorage.getItem(
+      '@todo-list-challenge:tasks-state-1.0.0',
+    )
+
+    if (storedStateAsJSON) {
+      return JSON.parse(storedStateAsJSON)
+    }
+
+    return []
+  }
+  const [tasks, setTasks] = useState<Task[]>(initialState)
   const [taskTitle, setTaskTitle] = useState('')
   // const [numberOfFinishedTasks, setnumberOfFinishedTasks] = useState(0)
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(tasks)
+    console.log(stateJSON)
+    localStorage.setItem('@todo-list-challenge:tasks-state-1.0.0', stateJSON)
+  }, [tasks])
 
   function createNewTask(data: Task) {
     setTasks([...tasks, { ...data, id: tasks.length }])
